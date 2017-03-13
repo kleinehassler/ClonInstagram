@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/img/logo-black.png" />
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--<button (click)="createPost()">Crear</button>-->
+  <ion-card *ngFor="let post of timeline">
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="post.user.avatar" />
+      </ion-avatar>
+      <h2>{{ post.user.name }}</h2>
+      <p>{{ post.user.location }}</p>
+      <button ion-button color="dark" item-right clear icon-only (click)="showOptions()">
+        <ion-icon name="more" ></ion-icon>
+      </button>
+    </ion-item>
+    <img [src]="post.img" />
+    <button ion-button color="dark" clear icon-only>
+      <ion-icon name="heart"></ion-icon>
+    </button>
+    <button ion-button color="dark" clear icon-only>
+      <ion-icon name="chatbubbles"></ion-icon>
+    </button>
+    <button ion-button color="dark" clear icon-only>
+      <ion-icon name="send"></ion-icon>
+    </button>
+    <ion-card-content>
+      <p>{{ post.text }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Filters</ion-title>
+     <ion-buttons end>
+      <button ion-button clean (click)="savePhoto()">Save</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="filters">
+  <div class="photo cover">
+    <img [src]="photo.img" [class]="filterSelected.class" />
+  </div>
+  <ion-scroll scrollX="true" class="scroll">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-33 *ngFor="let filter of filters" (click)="changeFilter( filter )">
+          <div class="photo">
+            <img [src]="photo.img" [class]="filter.class" />
+          </div>
+          <p text-center>{{ filter.name }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-scroll>
+</ion-content>

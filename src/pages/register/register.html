@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>Registrese</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form padding (ngSubmit)="doRegister()"  novalidate [formGroup]="registerForm">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input type="text" placeholder="Digite el usuario"  formControlName="user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="email" placeholder="Digite el email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Digite su password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Digite su password" formControlName="confirmPassword"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button color="light" outline block type="submit">Registrar</button>
+  </form>
+</ion-content>
